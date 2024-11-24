@@ -7,15 +7,104 @@
         "WebWorkerRpcDriver": {}
       }
     },
+    "theme": {
+      "palette": {
+        "primary": {
+          "main": "#9EB25D"
+        },
+        "secondary": {
+          "main": "#EEFCCE"
+        },
+        "tertiary": {
+          "main": "#A7C6DA"
+        },
+        "quaternary": {
+          "main": "#EDFF71"
+        }
+      }
+    },
     "logoPath": {
       "locationType": "UriLocation",
-      "uri": ""
+      "uri": "data/CB_Logo.svg"
     }
   },
-  "plugins": [],
+  "plugins": [
+    {
+      "name": "NucContent",
+      "umdLoc": {
+        "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js"
+      }
+    },
+    {
+      "name": "ReplaceSpaces",
+      "umdLoc": {
+        "uri": "plugins/ReplaceSpaces.js"
+      }
+    },
+    {
+      "name": "ReplaceUnderslashCapitalize",
+      "umdLoc": {
+        "uri": "plugins/ReplaceUnderslashCapitalize.js"
+      }
+    },
+    {
+      "name": "Italicize",
+      "umdLoc": {
+        "uri": "plugins/Italicize.js"
+      }
+    },
+    {
+      "name": "QVScore",
+      "umdLoc": {
+        "uri": "plugins/QVScore.js"
+      }
+    },
+    {
+      "name": "sgRNATarget",
+      "umdLoc": {
+        "uri": "plugins/sgRNATarget.js"
+      }
+    },
+    {
+      "name": "Capital",
+      "umdLoc": {
+        "uri": "plugins/Capital.js"
+      }
+    },
+    {
+      "name": "Inference",
+      "umdLoc": {
+        "uri": "plugins/Inference.js"
+      }
+    },
+    {
+      "name": "RemoveQuotes",
+      "umdLoc": {
+        "uri": "plugins/RemoveQuotes.js"
+      }
+    },
+    {
+      "name": "JSONParse",
+      "umdLoc": {
+        "uri": "plugins/JSONParse.js"
+      }
+    },
+    {
+      "name": "NanoporeScore",
+      "umdLoc": {
+        "uri": "plugins/NanoporeScore.js"
+      }
+    },
+    {
+      "name": "FoldEnriched",
+      "umdLoc": {
+        "uri": "plugins/FoldEnriched.js"
+      }
+    }
+  ],
   "assemblies": [
     {
-      "name": "MB001.fna",
+      "name": "MB001",
       "sequence": {
         "type": "ReferenceSequenceTrack",
         "trackId": "MB001.fna-ReferenceSequenceTrack",
@@ -47,7 +136,7 @@
       }
     },
     {
-      "name": "ATCC13032.fna",
+      "name": "ATCC 13032",
       "sequence": {
         "type": "ReferenceSequenceTrack",
         "trackId": "ATCC13032.fna-ReferenceSequenceTrack",
@@ -77,81 +166,98 @@
           }
         ]
       }
-    },
-    {
-      "name": "MB001.fna.gz",
-      "sequence": {
-        "type": "ReferenceSequenceTrack",
-        "trackId": "MB001.fna.gz-ReferenceSequenceTrack",
-        "adapter": {
-          "type": "BgzipFastaAdapter",
-          "fastaLocation": {
-            "locationType": "UriLocation",
-            "uri": "./data/MB001/MB001.fna.gz"
-          },
-          "faiLocation": {
-            "locationType": "UriLocation",
-            "uri": "./data/MB001/MB001.fna.gz.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
-          },
-          "gziLocation": {
-            "locationType": "UriLocation",
-            "uri": "./data/MB001/MB001.fna.gz.gzi"
-          }
-        },
-        "displays": [
-          {
-            "type": "LinearReferenceSequenceDisplay",
-            "displayId": "MB001.fna.gz-ReferenceSequenceTrack-LinearReferenceSequenceDisplay"
-          },
-          {
-            "type": "LinearGCContentDisplay",
-            "displayId": "MB001.fna.gz-ReferenceSequenceTrack-LinearGCContentDisplay"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ATCC13032.fna.gz",
-      "sequence": {
-        "type": "ReferenceSequenceTrack",
-        "trackId": "ATCC13032.fna.gz-ReferenceSequenceTrack",
-        "adapter": {
-          "type": "BgzipFastaAdapter",
-          "fastaLocation": {
-            "locationType": "UriLocation",
-            "uri": "./data/ATCC13032/ATCC13032.fna.gz"
-          },
-          "faiLocation": {
-            "locationType": "UriLocation",
-            "uri": "./data/ATCC13032/ATCC13032.fna.gz.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
-          },
-          "gziLocation": {
-            "locationType": "UriLocation",
-            "uri": "./data/ATCC13032/ATCC13032.fna.gz.gzi"
-          }
-        },
-        "displays": [
-          {
-            "type": "LinearReferenceSequenceDisplay",
-            "displayId": "ATCC13032.fna.gz-ReferenceSequenceTrack-LinearReferenceSequenceDisplay"
-          },
-          {
-            "type": "LinearGCContentDisplay",
-            "displayId": "ATCC13032.fna.gz-ReferenceSequenceTrack-LinearGCContentDisplay"
-          }
-        ]
-      }
     }
   ],
-  "tracks": [],
+  "tracks": [
+    {
+      "type": "NucContentTrack",
+      "trackId": "gc_content_MB001",
+      "name": "GC content",
+      "assemblyNames": [
+        "MB001"
+      ],
+      "category": [
+        "Genome characteristics",
+        "Miscellaneous"
+      ],
+      "adapter": {
+        "type": "NucContentAdapter",
+        "sequenceAdapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/MB001/MB001.fna.gz"
+          },
+          "faiLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/MB001/MB001.fna.gz.fai"
+          },
+          "metadataLocation": {
+            "locationType": "UriLocation",
+            "uri": "/path/to/fa.metadata.yaml"
+          },
+          "gziLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/MB001/MB001.fna.gz.gzi"
+          }
+        },
+        "windowSize": 200,
+        "windowOverlap": 10
+      },
+      "displays": [
+        {
+          "type": "NucContentDisplay",
+          "displayId": "gc_content_dynamic_MB001-NucContentDisplay",
+          "minScore": 0,
+          "maxScore": 0.8
+        }
+      ]
+    },
+    {
+      "type": "NucContentTrack",
+      "trackId": "gc_content_dynamic_ATCC13032",
+      "name": "GC content",
+      "assemblyNames": [
+        "ATCC 13032"
+      ],
+      "category": [
+        "Genome characteristics",
+        "Miscellaneous"
+      ],
+      "adapter": {
+        "type": "NucContentAdapter",
+        "sequenceAdapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032.fna.gz"
+          },
+          "faiLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032.fna.gz.fai"
+          },
+          "metadataLocation": {
+            "locationType": "UriLocation",
+            "uri": "/path/to/fa.metadata.yaml"
+          },
+          "gziLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032.fna.gz.gzi"
+          }
+        },
+        "windowSize": 200,
+        "windowOverlap": 10
+      },
+      "displays": [
+        {
+          "type": "NucContentDisplay",
+          "displayId": "gc_content_dynamic_ATCC13032-NucContentDisplay",
+          "minScore": 0,
+          "maxScore": 0.8
+        }
+      ]
+    }
+  ],
   "internetAccounts": [],
   "aggregateTextSearchAdapters": [],
   "connections": [],
@@ -166,7 +272,7 @@
       "hierarchicalTrackSelector": {
         "id": "hierarchicalTrackSelector",
         "type": "HierarchicalTrackSelectorWidget",
-        "view": "38_ev4DSuz8hMHRO09soV",
+        "view": "dwwJhJ6wt_k744e1Ba3Zg",
         "faceted": {
           "filterText": "",
           "showSparse": false,
@@ -181,26 +287,43 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CorynBrowse",
+    "name": "CoryneBrowse (v0.5)",
     "margin": 0,
     "views": [
       {
-        "id": "rYLnMxd4_WYZEadqcqS90",
-        "displayName": "ATCC13032",
+        "id": "coj-wkrrMa-ENYfuIFXs5",
         "minimized": false,
         "type": "LinearGenomeView",
         "offsetPx": 0,
-        "bpPerPx": 2013.0176399026764,
+        "bpPerPx": 3.0413625304136254,
         "displayedRegions": [
           {
             "reversed": false,
             "refName": "NC_003450.3",
             "start": 0,
             "end": 3309401,
-            "assemblyName": "ATCC13032.fna"
+            "assemblyName": "ATCC 13032"
           }
         ],
-        "tracks": [],
+        "tracks": [
+          {
+            "id": "4PcBz_Wm3GZSDpux6OC1Y",
+            "type": "ReferenceSequenceTrack",
+            "configuration": "ATCC13032.fna-ReferenceSequenceTrack",
+            "minimized": false,
+            "displays": [
+              {
+                "id": "hssbQPXCAZQhP_zJEP1yH",
+                "type": "LinearReferenceSequenceDisplay",
+                "heightPreConfig": 50,
+                "configuration": "ATCC13032.fna-ReferenceSequenceTrack-LinearReferenceSequenceDisplay",
+                "showForward": true,
+                "showReverse": true,
+                "showTranslation": true
+              }
+            ]
+          }
+        ],
         "hideHeader": false,
         "hideHeaderOverview": false,
         "hideNoTracksActive": false,
@@ -216,22 +339,40 @@
         "showBookmarkLabels": true
       },
       {
-        "id": "38_ev4DSuz8hMHRO09soV",
+        "id": "dwwJhJ6wt_k744e1Ba3Zg",
         "displayName": "MB001",
         "minimized": false,
         "type": "LinearGenomeView",
         "offsetPx": 0,
-        "bpPerPx": 1518.3693293885601,
+        "bpPerPx": 3.0413625304136254,
         "displayedRegions": [
           {
             "reversed": false,
             "refName": "NC_022040.1",
             "start": 0,
             "end": 3079253,
-            "assemblyName": "MB001.fna"
+            "assemblyName": "MB001"
           }
         ],
-        "tracks": [],
+        "tracks": [
+          {
+            "id": "Q5jdAA3NmL3YMaj9szapr",
+            "type": "ReferenceSequenceTrack",
+            "configuration": "MB001.fna-ReferenceSequenceTrack",
+            "minimized": false,
+            "displays": [
+              {
+                "id": "l7ZYWp7ZSd3Sq8s1L0eYg",
+                "type": "LinearReferenceSequenceDisplay",
+                "heightPreConfig": 50,
+                "configuration": "MB001.fna-ReferenceSequenceTrack-LinearReferenceSequenceDisplay",
+                "showForward": true,
+                "showReverse": true,
+                "showTranslation": true
+              }
+            ]
+          }
+        ],
         "hideHeader": false,
         "hideHeaderOverview": false,
         "hideNoTracksActive": false,
@@ -252,7 +393,7 @@
     "temporaryAssemblies": [],
     "connectionInstances": [],
     "sessionConnections": [],
-    "focusedViewId": "rYLnMxd4_WYZEadqcqS90",
+    "focusedViewId": "dwwJhJ6wt_k744e1Ba3Zg",
     "sessionPlugins": []
   }
 }
