@@ -104,7 +104,7 @@
   ],
   "assemblies": [
     {
-      "name": "ATCC 13032",
+      "name": "ATCC13032",
       "sequence": {
         "type": "ReferenceSequenceTrack",
         "trackId": "ATCC13032.fna-ReferenceSequenceTrack",
@@ -135,43 +135,357 @@
         ]
       }
     },
-{
-  "name": "MB001",
-  "sequence": {
-    "type": "ReferenceSequenceTrack",
-    "trackId": "MB001.fna-ReferenceSequenceTrack",
-    "adapter": {
-      "type": "IndexedFastaAdapter",
-      "fastaLocation": {
-        "locationType": "UriLocation",
-        "uri": "./data/MB001/MB001.fna"
-      },
-      "faiLocation": {
-        "locationType": "UriLocation",
-        "uri": "./data/MB001/MB001.fna.fai"
-      },
-      "metadataLocation": {
-        "locationType": "UriLocation",
-        "uri": "/path/to/fa.metadata.yaml"
+    {
+      "name": "MB001",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "MB001.fna-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": {
+            "locationType": "UriLocation",
+            "uri": "./data/MB001/MB001.fna"
+          },
+          "faiLocation": {
+            "locationType": "UriLocation",
+            "uri": "./data/MB001/MB001.fna.fai"
+          },
+          "metadataLocation": {
+            "locationType": "UriLocation",
+            "uri": "/path/to/fa.metadata.yaml"
+          }
+        },
+        "displays": [
+          {
+            "type": "LinearReferenceSequenceDisplay",
+            "displayId": "MB001.fna-ReferenceSequenceTrack-LinearReferenceSequenceDisplay"
+          },
+          {
+            "type": "LinearGCContentDisplay",
+            "displayId": "MB001.fna-ReferenceSequenceTrack-LinearGCContentDisplay"
+          }
+        ]
       }
-    },
-    "displays": [
-      {
-        "type": "LinearReferenceSequenceDisplay",
-        "displayId": "MB001.fna-ReferenceSequenceTrack-LinearReferenceSequenceDisplay"
-      },
-      {
-        "type": "LinearGCContentDisplay",
-        "displayId": "MB001.fna-ReferenceSequenceTrack-LinearGCContentDisplay"
-      }
-    ]
-  }
-}
+    }
   ],
   "tracks": [
     {
+      "type": "FeatureTrack",
+      "trackId": "ATCC13032_coding_features",
+      "name": "Coding features",
+      "assemblyNames": [
+        "ATCC13032"
+      ],
+      "category": [
+        "Annotation"
+      ],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/ATCC13032/ATCC13032_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032_sorted.gff.gz.tbi"
+          }
+        }
+      },
+      "textSearching": {
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "ATCC13032_coding_features-index",
+          "ixFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/ATCC13032_coding_features.ix"
+          },
+          "ixxFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/ATCC13032_coding_features.ixx"
+          },
+          "metaFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/ATCC13032_coding_features_meta.json"
+          },
+          "assemblyNames": [
+            "ATCC13032"
+          ]
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearBasicDisplay",
+          "displayId": "ATCC13032_sorted.gff-LinearBasicDisplay",
+          "mouseover": "jexl:italics(get(feature,'name')) || get(feature,'locus_tag')",
+          "renderer": {
+            "type": "SvgFeatureRenderer",
+            "color1": "jexl:get(feature,'type')=='tRNA'?'rgb(45, 41, 138)': get(feature,'type')=='tmRNA'?'rgb(45, 41, 138)': get(feature,'type')=='rRNA'?'rgb(136, 184, 77)' : get(feature,'type')=='mRNA_region'?'grey':'rgb(215, 163, 32)'",
+            "labels": {
+              "name": "jexl:get(feature,'name') || get(feature,'locus_tag')"
+            }
+          }
+        },
+        {
+          "type": "LinearArcDisplay",
+          "displayId": "ATCC13032_sorted.gff-LinearArcDisplay"
+        }
+      ],
+      "formatDetails": {
+        "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Locus_tag:feature.locus_tag, locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  uniprot:undefined,}",
+        "subfeatures": "jexl:{accession:undefined, name:italics(feature.name), type:capital(feature.type), Source:replaceuc(feature.source), source:undefined, phase:undefined, id:undefined, parent:undefined, EC_number: feature.ec_number != null ? '<a href=https://enzyme.expasy.org/EC/'+feature.ec_number+'>'+feature.ec_number+'</a>' : null , ec_number:undefined, Gene:italics(feature.gene), gene:undefined, Inference:feature.inference != null ? capital(inference(feature.inference)) : null, inference:undefined, locus_tag:undefined, Product:capital(feature.product), product:undefined, protein_id:undefined, RFAM: feature.accession != null ? '<a href=https://rfam.org/family/'+feature.accession+'>'+feature.accession+'</a>' : null, note:undefined, Note: feature.note != null ? removequotes(feature.note): null}"
+      }
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "ATCC13032_sgRNA",
+      "name": "sgRNAs",
+      "assemblyNames": [
+        "ATCC13032"
+      ],
+      "category": [
+        "CRISPRi"
+      ],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/ATCC13032/ATCC13032_sgRNA_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032_sgRNA_sorted.gff.gz.tbi"
+          }
+        }
+      },
+      "textSearching": {
+        "indexingAttributes": [
+          "Name",
+          "ID",
+          "name"
+        ],
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "ATCC13032_sgRNA_sorted.gff-index",
+          "ixFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/ATCC13032_sgRNA_sorted.gff.ix"
+          },
+          "ixxFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/ATCC13032_sgRNA_sorted.gff.ixx"
+          },
+          "metaFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/ATCC13032_sgRNA_sorted.gff_meta.json"
+          },
+          "assemblyNames": [
+            "ATCC13032"
+          ]
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearBasicDisplay",
+          "displayId": "ATCC13032_sgRNA_sorted.gff-LinearBasicDisplay",
+          "mouseover": "jexl:sgrnatarget(get(feature,'target_gene_name'))",
+          "renderer": {
+            "type": "SvgFeatureRenderer",
+            "color1": "rgb(102, 194, 165)"
+          }
+        },
+        {
+          "type": "LinearArcDisplay",
+          "displayId": "ATCC13032_sgRNA_sorted.gff-LinearArcDisplay"
+        }
+      ],
+      "formatDetails": {
+        "feature": "jexl:{Source:'V. de Bakker', score:undefined, source:undefined, id:undefined, phase:undefined, Target_locus_tag:feature.target_locus_tag, target_locus_tag:undefined, Target_gene_name: feature.target_gene_name != feature.target_locus_tag ? italics(feature.target_gene_name) : null, target_gene_name:undefined}"
+      }
+    },
+    {
       "type": "NucContentTrack",
-      "trackId": "gc_content_MB001",
+      "trackId": "ATCC13032_gc_content",
+      "name": "GC content",
+      "assemblyNames": [
+        "ATCC13032"
+      ],
+      "category": [
+        "Genome characteristics",
+        "Miscellaneous"
+      ],
+      "adapter": {
+        "type": "NucContentAdapter",
+        "sequenceAdapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032.fna.gz"
+          },
+          "faiLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032.fna.gz.fai"
+          },
+          "metadataLocation": {
+            "locationType": "UriLocation",
+            "uri": "/path/to/fa.metadata.yaml"
+          },
+          "gziLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/ATCC13032/ATCC13032.fna.gz.gzi"
+          }
+        },
+        "windowSize": 200,
+        "windowOverlap": 10
+      },
+      "displays": [
+        {
+          "type": "NucContentDisplay",
+          "displayId": "ATCC13032_gc_content-NucContentDisplay",
+          "minScore": 0,
+          "maxScore": 0.8
+        }
+      ]
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "MB001_coding_features",
+      "name": "Coding features",
+      "assemblyNames": [
+        "MB001"
+      ],
+      "category": [
+        "Annotation"
+      ],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/MB001/MB001_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/MB001/MB001_sorted.gff.gz.tbi"
+          }
+        }
+      },
+      "textSearching": {
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "MB001_coding_features-index",
+          "ixFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/MB001_coding_features.ix"
+          },
+          "ixxFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/MB001_coding_features.ixx"
+          },
+          "metaFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/MB001_coding_features_meta.json"
+          },
+          "assemblyNames": [
+            "MB001"
+          ]
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearBasicDisplay",
+          "displayId": "MB001_sorted.gff-LinearBasicDisplay",
+          "mouseover": "jexl:italics(get(feature,'name')) || get(feature,'locus_tag')",
+          "renderer": {
+            "type": "SvgFeatureRenderer",
+            "color1": "jexl:get(feature,'type')=='tRNA'?'rgb(45, 41, 138)': get(feature,'type')=='tmRNA'?'rgb(45, 41, 138)': get(feature,'type')=='rRNA'?'rgb(136, 184, 77)' : get(feature,'type')=='mRNA_region'?'grey':'rgb(215, 163, 32)'",
+            "labels": {
+              "name": "jexl:get(feature,'name') || get(feature,'locus_tag')"
+            }
+          }
+        },
+        {
+          "type": "LinearArcDisplay",
+          "displayId": "MB001_sorted.gff-LinearArcDisplay"
+        }
+      ],
+      "formatDetails": {
+        "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Locus_tag:feature.locus_tag, locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  uniprot:undefined,}",
+        "subfeatures": "jexl:{accession:undefined, name:italics(feature.name), type:capital(feature.type), Source:replaceuc(feature.source), source:undefined, phase:undefined, id:undefined, parent:undefined, EC_number: feature.ec_number != null ? '<a href=https://enzyme.expasy.org/EC/'+feature.ec_number+'>'+feature.ec_number+'</a>' : null , ec_number:undefined, Gene:italics(feature.gene), gene:undefined, Inference:feature.inference != null ? capital(inference(feature.inference)) : null, inference:undefined, locus_tag:undefined, Product:capital(feature.product), product:undefined, protein_id:undefined, RFAM: feature.accession != null ? '<a href=https://rfam.org/family/'+feature.accession+'>'+feature.accession+'</a>' : null, note:undefined, Note: feature.note != null ? removequotes(feature.note): null}"
+      }
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "MB001_sgRNA",
+      "name": "sgRNAs",
+      "assemblyNames": [
+        "MB001"
+      ],
+      "category": [
+        "CRISPRi"
+      ],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/MB001/MB001_sgRNA_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/MB001/MB001_sgRNA_sorted.gff.gz.tbi"
+          }
+        }
+      },
+      "textSearching": {
+        "indexingAttributes": [
+          "Name",
+          "ID",
+          "name"
+        ],
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "MB001_sgRNA_sorted.gff-index",
+          "ixFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/MB001_sgRNA_sorted.gff.ix"
+          },
+          "ixxFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/MB001_sgRNA_sorted.gff.ixx"
+          },
+          "metaFilePath": {
+            "locationType": "UriLocation",
+            "uri": "trix/MB001_sgRNA_sorted.gff_meta.json"
+          },
+          "assemblyNames": [
+            "MB001"
+          ]
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearBasicDisplay",
+          "displayId": "MB001_sgRNA_sorted.gff-LinearBasicDisplay",
+          "mouseover": "jexl:sgrnatarget(get(feature,'target_gene_name'))",
+          "renderer": {
+            "type": "SvgFeatureRenderer",
+            "color1": "rgb(102, 194, 165)"
+          }
+        },
+        {
+          "type": "LinearArcDisplay",
+          "displayId": "MB001_sgRNA_sorted.gff-LinearArcDisplay"
+        }
+      ],
+      "formatDetails": {
+        "feature": "jexl:{Source:'V. de Bakker', score:undefined, source:undefined, id:undefined, phase:undefined, Target_locus_tag:feature.target_locus_tag, target_locus_tag:undefined, Target_gene_name: feature.target_gene_name != feature.target_locus_tag ? italics(feature.target_gene_name) : null, target_gene_name:undefined}"
+      }
+    },
+    {
+      "type": "NucContentTrack",
+      "trackId": "MB001_gc_content",
       "name": "GC content",
       "assemblyNames": [
         "MB001"
@@ -207,51 +521,7 @@
       "displays": [
         {
           "type": "NucContentDisplay",
-          "displayId": "gc_content_dynamic_MB001-NucContentDisplay",
-          "minScore": 0,
-          "maxScore": 0.8
-        }
-      ]
-    },
-    {
-      "type": "NucContentTrack",
-      "trackId": "gc_content_dynamic_ATCC13032",
-      "name": "GC content",
-      "assemblyNames": [
-        "ATCC 13032"
-      ],
-      "category": [
-        "Genome characteristics",
-        "Miscellaneous"
-      ],
-      "adapter": {
-        "type": "NucContentAdapter",
-        "sequenceAdapter": {
-          "type": "BgzipFastaAdapter",
-          "fastaLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/ATCC13032/ATCC13032.fna.gz"
-          },
-          "faiLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/ATCC13032/ATCC13032.fna.gz.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
-          },
-          "gziLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/ATCC13032/ATCC13032.fna.gz.gzi"
-          }
-        },
-        "windowSize": 200,
-        "windowOverlap": 10
-      },
-      "displays": [
-        {
-          "type": "NucContentDisplay",
-          "displayId": "gc_content_dynamic_ATCC13032-NucContentDisplay",
+          "displayId": "MB001_gc_content-NucContentDisplay",
           "minScore": 0,
           "maxScore": 0.8
         }
@@ -287,7 +557,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.6)",
+    "name": "CoryneBrowse (v0.7)",
     "margin": 0,
     "views": [
       {
@@ -302,7 +572,7 @@
             "refName": "ATCC_13032",
             "start": 0,
             "end": 3309401,
-            "assemblyName": "ATCC 13032"
+            "assemblyName": "ATCC13032"
           }
         ],
         "tracks": [
@@ -326,13 +596,13 @@
           {
             "id": "Cb1rR4-9pTRPUUcyLry3b",
             "type": "NucContentTrack",
-            "configuration": "gc_content_dynamic_ATCC13032",
+            "configuration": "ATCC13032_gc_content",
             "minimized": false,
             "displays": [
               {
                 "id": "tDYadBHfiBKgAGDBxD-7Z",
                 "type": "NucContentDisplay",
-                "configuration": "gc_content_dynamic_ATCC13032-NucContentDisplay",
+                "configuration": "ATCC13032_gc_content-NucContentDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
                 "constraints": {}
@@ -390,13 +660,13 @@
           {
             "id": "g4TgZV1fRooRZEvLp1I93",
             "type": "NucContentTrack",
-            "configuration": "gc_content_MB001",
+            "configuration": "MB001_gc_content",
             "minimized": false,
             "displays": [
               {
                 "id": "VSKmf6tx3sEXfsouvG2Gh",
                 "type": "NucContentDisplay",
-                "configuration": "gc_content_dynamic_MB001-NucContentDisplay",
+                "configuration": "MB001_gc_content-NucContentDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
                 "constraints": {}
