@@ -226,7 +226,7 @@
         }
       ],
       "formatDetails": {
-        "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Locus_tag:feature.locus_tag, locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  NCBI:feature.uniprot != null ? '<a href=https://www.ncbi.nlm.nih.gov/protein/'+feature.uniprot+'>'+'NCBI'+'</a>' : null, uniprot:undefined, STRING: feature.stringdb != null ? '<a href=https://string-db.org/cgi/network?identifiers='+feature.stringdb+'>'+'STRING'+'</a>' : null, stringdb:undefined}",
+        "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Locus_tag:feature.locus_tag, locus_tag:undefined, New_locus_tag:feature.new_locus_tag, new_locus_tag:undefined, Old_locus_tag:feature.old_locus_tag, old_locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  NCBI:feature.protein_id != null ? '<a href=https://www.ncbi.nlm.nih.gov/protein/'+feature.protein_id+'>'+'NCBI'+'</a>' : null, protein_id:undefined, uniprot:undefined, STRING: feature.stringdb != null ? '<a href=https://string-db.org/cgi/network?identifiers='+feature.stringdb+'>'+'STRING'+'</a>' : null, stringdb:undefined}",
         "subfeatures": "jexl:{accession:undefined, name:italics(feature.name), type:capital(feature.type), Source:replaceuc(feature.source), source:undefined, phase:undefined, id:undefined, parent:undefined, EC_number: feature.ec_number != null ? '<a href=https://enzyme.expasy.org/EC/'+feature.ec_number+'>'+feature.ec_number+'</a>' : null , ec_number:undefined, Gene:italics(feature.gene), gene:undefined, Inference:feature.inference != null ? capital(inference(feature.inference)) : null, inference:undefined, locus_tag:undefined, Product:capital(feature.product), product:undefined, protein_id:undefined, RFAM: feature.accession != null ? '<a href=https://rfam.org/family/'+feature.accession+'>'+feature.accession+'</a>' : null, note:undefined, Note: feature.note != null ? removequotes(feature.note): null}"
       }
     },
@@ -264,15 +264,15 @@
           "textSearchAdapterId": "ATCC13032_sgRNA_sorted.gff-index",
           "ixFilePath": {
             "locationType": "UriLocation",
-            "uri": "trix/ATCC13032_sgRNA_sorted.gff.ix"
+            "uri": "trix/ATCC13032_sgRNA.ix"
           },
           "ixxFilePath": {
             "locationType": "UriLocation",
-            "uri": "trix/ATCC13032_sgRNA_sorted.gff.ixx"
+            "uri": "trix/ATCC13032_sgRNA.ixx"
           },
           "metaFilePath": {
             "locationType": "UriLocation",
-            "uri": "trix/ATCC13032_sgRNA_sorted.gff_meta.json"
+            "uri": "trix/ATCC13032_sgRNA_meta.json"
           },
           "assemblyNames": [
             "ATCC13032"
@@ -405,7 +405,7 @@
         }
       ],
       "formatDetails": {
-        "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Locus_tag:feature.locus_tag, locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  NCBI:feature.uniprot != null ? '<a href=https://www.ncbi.nlm.nih.gov/protein/'+feature.uniprot+'>'+'NCBI'+'</a>' : null, uniprot:undefined, STRING: feature.stringdb != null ? '<a href=https://string-db.org/cgi/network?identifiers='+feature.stringdb+'>'+'STRING'+'</a>' : null, stringdb:undefined}",
+        "feature": "jexl:{name:italics(feature.name), type:replaceuc(feature.type), Source:replaceuc(feature.source), source:undefined, phase: undefined, id:undefined, Gene:italics(feature.gene), gene:undefined, Locus_tag:feature.locus_tag, locus_tag:undefined, New_locus_tag:feature.new_locus_tag, new_locus_tag:undefined, Old_locus_tag:feature.old_locus_tag, old_locus_tag:undefined, UniProt: feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, AlphaFold: feature.uniprot != null ? '<a href=https://alphafold.ebi.ac.uk/entry/'+feature.uniprot+'>'+'AlphaFold'+'</a>' : null, Foldseek: feature.uniprot != null ? '<a href=https://search.foldseek.com/search?accession='+feature.uniprot+'&source=AlphaFoldDB>'+'Foldseek'+'</a>' : null,  NCBI:feature.protein_id != null ? '<a href=https://www.ncbi.nlm.nih.gov/protein/'+feature.protein_id+'>'+'NCBI'+'</a>' : null, protein_id:undefined, uniprot:undefined, STRING: feature.stringdb != null ? '<a href=https://string-db.org/cgi/network?identifiers='+feature.stringdb+'>'+'STRING'+'</a>' : null, stringdb:undefined}",
         "subfeatures": "jexl:{accession:undefined, name:italics(feature.name), type:capital(feature.type), Source:replaceuc(feature.source), source:undefined, phase:undefined, id:undefined, parent:undefined, EC_number: feature.ec_number != null ? '<a href=https://enzyme.expasy.org/EC/'+feature.ec_number+'>'+feature.ec_number+'</a>' : null , ec_number:undefined, Gene:italics(feature.gene), gene:undefined, Inference:feature.inference != null ? capital(inference(feature.inference)) : null, inference:undefined, locus_tag:undefined, Product:capital(feature.product), product:undefined, protein_id:undefined, RFAM: feature.accession != null ? '<a href=https://rfam.org/family/'+feature.accession+'>'+feature.accession+'</a>' : null, note:undefined, Note: feature.note != null ? removequotes(feature.note): null}"
       }
     },
@@ -443,15 +443,15 @@
           "textSearchAdapterId": "MB001_sgRNA_sorted.gff-index",
           "ixFilePath": {
             "locationType": "UriLocation",
-            "uri": "trix/MB001_sgRNA_sorted.gff.ix"
+            "uri": "trix/MB001_sgRNA.ix"
           },
           "ixxFilePath": {
             "locationType": "UriLocation",
-            "uri": "trix/MB001_sgRNA_sorted.gff.ixx"
+            "uri": "trix/MB001_sgRNA.ixx"
           },
           "metaFilePath": {
             "locationType": "UriLocation",
-            "uri": "trix/MB001_sgRNA_sorted.gff_meta.json"
+            "uri": "trix/MB001_sgRNA_meta.json"
           },
           "assemblyNames": [
             "MB001"
@@ -551,11 +551,12 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.9)",
+    "name": "CoryneBrowse (v0.10)",
     "margin": 0,
     "views": [
       {
         "id": "RL1j44cRiK_1eGDymxFso",
+        "displayName": "ATCC 13032",
         "minimized": false,
         "type": "LinearGenomeView",
         "offsetPx": 0,
@@ -716,7 +717,7 @@
     "temporaryAssemblies": [],
     "connectionInstances": [],
     "sessionConnections": [],
-    "focusedViewId": "55eVwhEHASZ6QcKJaPifP",
+    "focusedViewId": "RL1j44cRiK_1eGDymxFso",
     "sessionPlugins": []
   }
 }

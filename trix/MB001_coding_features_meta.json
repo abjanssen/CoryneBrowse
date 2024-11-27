@@ -1,12 +1,14 @@
 {
-  "dateCreated": "2024-11-25T15:32:35.872Z",
+  "dateCreated": "2024-11-27T18:24:35.254Z",
   "tracks": [
     {
       "trackId": "MB001_coding_features",
       "attributesIndexed": [
         "name",
         "gene",
-        "locus_tag"
+        "locus_tag",
+        "old_locus_tag",
+        "new_locus_tag"
       ],
       "excludedTypes": [
         "CDS",

@@ -1,12 +1,14 @@
 {
-  "dateCreated": "2024-11-25T15:32:34.610Z",
+  "dateCreated": "2024-11-27T18:24:33.661Z",
   "tracks": [
     {
       "trackId": "ATCC13032_coding_features",
       "attributesIndexed": [
         "name",
         "gene",
-        "locus_tag"
+        "locus_tag",
+        "old_locus_tag",
+        "new_locus_tag"
       ],
       "excludedTypes": [
         "CDS",
@@ -29,6 +31,6 @@
     }
   ],
   "assemblyNames": [
-    "ATCC 13032"
+    "ATCC13032"
   ]
 }

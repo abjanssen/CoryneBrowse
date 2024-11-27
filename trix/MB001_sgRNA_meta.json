@@ -1,5 +1,5 @@
 {
-  "dateCreated": "2024-11-25T15:32:36.574Z",
+  "dateCreated": "2024-11-27T18:24:36.007Z",
   "tracks": [
     {
       "trackId": "MB001_sgRNA",
@@ -29,6 +29,6 @@
     }
   ],
   "assemblyNames": [
-    "ATCC 13032"
+    "MB001"
   ]
 }
