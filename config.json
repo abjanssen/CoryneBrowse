@@ -42,12 +42,6 @@
       }
     },
     {
-      "name": "ReplaceSpaces",
-      "umdLoc": {
-        "uri": "plugins/ReplaceSpaces.js"
-      }
-    },
-    {
       "name": "ReplaceUnderslashCapitalize",
       "umdLoc": {
         "uri": "plugins/ReplaceUnderslashCapitalize.js"
@@ -57,12 +51,6 @@
       "name": "Italicize",
       "umdLoc": {
         "uri": "plugins/Italicize.js"
-      }
-    },
-    {
-      "name": "QVScore",
-      "umdLoc": {
-        "uri": "plugins/QVScore.js"
       }
     },
     {
@@ -87,18 +75,6 @@
       "name": "RemoveQuotes",
       "umdLoc": {
         "uri": "plugins/RemoveQuotes.js"
-      }
-    },
-    {
-      "name": "JSONParse",
-      "umdLoc": {
-        "uri": "plugins/JSONParse.js"
-      }
-    },
-    {
-      "name": "FoldEnriched",
-      "umdLoc": {
-        "uri": "plugins/FoldEnriched.js"
       }
     }
   ],
@@ -557,7 +533,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.12)",
+    "name": "CoryneBrowse (v0.13)",
     "margin": 0,
     "views": [
       {
