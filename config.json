@@ -104,7 +104,7 @@
   ],
   "assemblies": [
     {
-      "name": "ATCC13032",
+      "name": "ATCC 13032",
       "sequence": {
         "type": "ReferenceSequenceTrack",
         "trackId": "ATCC13032.fna-ReferenceSequenceTrack",
@@ -174,7 +174,7 @@
       "trackId": "ATCC13032_coding_features",
       "name": "Coding features",
       "assemblyNames": [
-        "ATCC13032"
+        "ATCC 13032"
       ],
       "category": [
         "Annotation"
@@ -209,7 +209,7 @@
             "uri": "trix/ATCC13032_coding_features_meta.json"
           },
           "assemblyNames": [
-            "ATCC13032"
+            "ATCC 13032"
           ]
         }
       },
@@ -241,7 +241,7 @@
       "trackId": "ATCC13032_sgRNA",
       "name": "sgRNAs",
       "assemblyNames": [
-        "ATCC13032"
+        "ATCC 13032"
       ],
       "category": [
         "CRISPRi"
@@ -281,7 +281,7 @@
             "uri": "trix/ATCC13032_sgRNA_meta.json"
           },
           "assemblyNames": [
-            "ATCC13032"
+            "ATCC 13032"
           ]
         }
       },
@@ -309,7 +309,7 @@
       "trackId": "ATCC13032_gc_content",
       "name": "GC content",
       "assemblyNames": [
-        "ATCC13032"
+        "ATCC 13032"
       ],
       "category": [
         "Genome characteristics",
@@ -557,7 +557,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.11)",
+    "name": "CoryneBrowse (v0.12)",
     "margin": 0,
     "views": [
       {
@@ -573,7 +573,7 @@
             "refName": "ATCC_13032",
             "start": 0,
             "end": 3309401,
-            "assemblyName": "ATCC13032"
+            "assemblyName": "ATCC 13032"
           }
         ],
         "tracks": [
