@@ -533,13 +533,13 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.16)",
+    "name": "CoryneBrowse (v0.17)",
     "margin": 0,
     "views": [
       {
         "id": "RL1j44cRiK_1eGDymxFso",
         "displayName": "ATCC 13032",
-        "minimized": false,
+        "minimized": true,
         "type": "LinearGenomeView",
         "offsetPx": 0,
         "bpPerPx": 3.0413625304136254,
@@ -612,8 +612,8 @@
         "highlight": [],
         "colorByCDS": false,
         "showTrackOutlines": true,
-        "showBookmarkHighlights": true,
-        "showBookmarkLabels": true
+        "bookmarkHighlightsVisible": true,
+        "bookmarkLabelsVisible": true
       },
       {
         "id": "55eVwhEHASZ6QcKJaPifP",
@@ -690,8 +690,8 @@
         "highlight": [],
         "colorByCDS": false,
         "showTrackOutlines": true,
-        "showBookmarkHighlights": true,
-        "showBookmarkLabels": true
+        "bookmarkHighlightsVisible": true,
+        "bookmarkLabelsVisible": true
       }
     ],
     "sessionTracks": [],
@@ -701,5 +701,6 @@
     "sessionConnections": [],
     "focusedViewId": "RL1j44cRiK_1eGDymxFso",
     "sessionPlugins": []
-  }
+  },
+  "preConfiguredSessions": []
 }
