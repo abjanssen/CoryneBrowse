@@ -1,6 +1,9 @@
 // Italicize.js
 ;(function () {
   class MyPlugin {
+  name = 'TextFormattingPlugin'
+  version = 'ItalicFormatting'
+
     install() {}
     configure(pluginManager) {
       pluginManager.jexl.addFunction('italics', feature => {
@@ -14,7 +17,7 @@
 
         // Step 3 & 4: Test each part if it starts with "SPV_" or a capital letter
         const formattedParts = trimmedParts.map(part => {
-          if (part.startsWith("SPV_") || /^[A-Z]/.test(part)) {
+          if (part.startsWith("U2W45_") || /^[A-Z]/.test(part)) {
             // If it starts with "SPV_" or a capital letter, return it normally
             return part;
           } else {
