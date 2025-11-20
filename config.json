@@ -42,6 +42,12 @@
               }
             },
     {
+      "name": "Protein3d",
+      "umdLoc": {
+        "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js"
+      }
+    },
+    {
       "name": "NucContent",
       "umdLoc": {
         "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js"
@@ -551,7 +557,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.35)",
+    "name": "CoryneBrowse (v0.36)",
     "margin": 0,
     "views": [
       {
