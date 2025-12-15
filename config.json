@@ -29,79 +29,20 @@
     }
   },
   "plugins": [
-    {
-      "name": "ReferenceContactsWidget",
-      "esmLoc": {
-        "uri": "plugins/ReferenceContactsWidget.js"
-      }
-    },
-            {
-              "name": "MsaView",
-              "umdLoc": {
-                "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js"
-              }
-            },
-    {
-      "name": "Protein3d",
-      "umdLoc": {
-        "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js"
-      }
-    },
-    {
-      "name": "NucContent",
-      "umdLoc": {
-        "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js"
-      }
-    },
-    {
-      "name": "JSONParse",
-      "umdLoc": {
-        "uri": "plugins/JSONParse.js"
-      }
-    },
-    {
-      "name": "RemoveCOG",
-      "umdLoc": {
-        "uri": "plugins/RemoveCOG.js"
-      }
-    },
-    {
-      "name": "ReplaceUnderslashCapitalize",
-      "umdLoc": {
-        "uri": "plugins/ReplaceUnderslashCapitalize.js"
-      }
-    },
-    {
-      "name": "Italicize",
-      "umdLoc": {
-        "uri": "plugins/Italicize.js"
-      }
-    },
-    {
-      "name": "sgRNATarget",
-      "umdLoc": {
-        "uri": "plugins/sgRNATarget.js"
-      }
-    },
-    {
-      "name": "Capital",
-      "umdLoc": {
-        "uri": "plugins/Capital.js"
-      }
-    },
-    {
-      "name": "Inference",
-      "umdLoc": {
-        "uri": "plugins/Inference.js"
-      }
-    },
-    {
-      "name": "RemoveQuotes",
-      "umdLoc": {
-        "uri": "plugins/RemoveQuotes.js"
-      }
-    }
-  ],
+  { "name": "MsaView", "umdLoc": { "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js" } },
+  { "name": "NucContent", "umdLoc": { "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js" } },
+  { "name": "Protein3d", "umdLoc": { "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js" } },
+  { "name": "ReferenceContactsWidget", "esmLoc": { "uri": "plugins/ReferenceContactsWidget.js" } },
+  { "name": "Inference", "umdLoc": { "uri": "plugins/Inference.js" } },
+  { "name": "JSONParse", "umdLoc": { "uri": "plugins/JSONParse.js" } },
+  { "name": "sgRNATarget", "umdLoc": { "uri": "plugins/sgRNATarget.js" } },
+  { "name": "Capital", "umdLoc": { "uri": "plugins/Capital.js" } },
+  { "name": "Italicize", "umdLoc": { "uri": "plugins/Italicize.js" } },
+  { "name": "RemoveCOG", "umdLoc": { "uri": "plugins/RemoveCOG.js" } },
+  { "name": "RemoveQuotes", "umdLoc": { "uri": "plugins/RemoveQuotes.js" } },
+  { "name": "ReplaceUnderslashCapitalize", "umdLoc": { "uri": "plugins/ReplaceUnderslashCapitalize.js" } }
+    ]   
+    ,
   "assemblies": [
     {
       "name": "ATCC 13032",
@@ -557,7 +498,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.36)",
+    "name": "CoryneBrowse (v0.37)",
     "margin": 0,
     "views": [
       {
