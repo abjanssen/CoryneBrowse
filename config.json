@@ -30,7 +30,6 @@
   },
   "plugins": [
   { "name": "MsaView", "umdLoc": { "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js" } },
-  { "name": "NucContent", "umdLoc": { "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js" } },
   { "name": "Protein3d", "umdLoc": { "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js" } },
   { "name": "ReferenceContactsWidget", "esmLoc": { "uri": "plugins/ReferenceContactsWidget.js" } },
   { "name": "Inference", "umdLoc": { "uri": "plugins/Inference.js" } },
@@ -246,8 +245,8 @@
       }
     },
     {
-      "type": "NucContentTrack",
-      "trackId": "ATCC13032_gc_content",
+      "type": "GCContentTrack",
+      "trackId": "gc_content_ATCC13032",
       "name": "GC content",
       "assemblyNames": [
         "ATCC 13032"
@@ -257,35 +256,24 @@
         "Miscellaneous"
       ],
       "adapter": {
-        "type": "NucContentAdapter",
-        "sequenceAdapter": {
-          "type": "BgzipFastaAdapter",
-          "fastaLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/ATCC13032/ATCC13032.fna.gz"
-          },
-          "faiLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/ATCC13032/ATCC13032.fna.gz.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
-          },
-          "gziLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/ATCC13032/ATCC13032.fna.gz.gzi"
-          }
+        "type": "IndexedFastaAdapter",
+        "fastaLocation": {
+          "locationType": "UriLocation",
+          "uri": "./data/ATCC13032/ATCC13032.fna"
         },
-        "windowSize": 200,
-        "windowOverlap": 10
+        "faiLocation": {
+          "locationType": "UriLocation",
+          "uri": "./data/ATCC13032/ATCC13032.fna.fai"
+        },
+        "metadataLocation": {
+          "locationType": "UriLocation",
+          "uri": "/path/to/fa.metadata.yaml"
+        }
       },
       "displays": [
         {
-          "type": "NucContentDisplay",
-          "displayId": "ATCC13032_gc_content-NucContentDisplay",
-          "minScore": 0,
-          "maxScore": 0.8
+          "type": "LinearGCContentTrackDisplay",
+          "displayId": "gc_content_ATCC13032-LinearGCContentTrackDisplay"
         }
       ]
     },
@@ -425,8 +413,8 @@
       }
     },
     {
-      "type": "NucContentTrack",
-      "trackId": "MB001_gc_content",
+      "type": "GCContentTrack",
+      "trackId": "gc_content_MB001",
       "name": "GC content",
       "assemblyNames": [
         "MB001"
@@ -436,35 +424,24 @@
         "Miscellaneous"
       ],
       "adapter": {
-        "type": "NucContentAdapter",
-        "sequenceAdapter": {
-          "type": "BgzipFastaAdapter",
-          "fastaLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/MB001/MB001.fna.gz"
-          },
-          "faiLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/MB001/MB001.fna.gz.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
-          },
-          "gziLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/MB001/MB001.fna.gz.gzi"
-          }
+        "type": "IndexedFastaAdapter",
+        "fastaLocation": {
+          "locationType": "UriLocation",
+          "uri": "./data/MB001/MB001.fna"
         },
-        "windowSize": 200,
-        "windowOverlap": 10
+        "faiLocation": {
+          "locationType": "UriLocation",
+          "uri": "./data/MB001/MB001.fna.fai"
+        },
+        "metadataLocation": {
+          "locationType": "UriLocation",
+          "uri": "/path/to/fa.metadata.yaml"
+        }
       },
       "displays": [
         {
-          "type": "NucContentDisplay",
-          "displayId": "MB001_gc_content-NucContentDisplay",
-          "minScore": 0,
-          "maxScore": 0.8
+          "type": "LinearGCContentTrackDisplay",
+          "displayId": "gc_content_MB001-LinearGCContentTrackDisplay"
         }
       ]
     }
@@ -498,7 +475,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.37)",
+    "name": "CoryneBrowse (v0.38)",
     "margin": 0,
     "views": [
       {
@@ -551,20 +528,25 @@
             ]
           },
           {
-            "id": "Cb1rR4-9pTRPUUcyLry3b",
-            "type": "NucContentTrack",
-            "configuration": "ATCC13032_gc_content",
+            "id": "VcP339XrwELEbzw14Y9f0",
+            "type": "GCContentTrack",
+            "configuration": "gc_content_ATCC13032",
             "minimized": false,
             "pinned": false,
             "displays": [
               {
-                "id": "tDYadBHfiBKgAGDBxD-7Z",
-                "type": "NucContentDisplay",
-                "configuration": "ATCC13032_gc_content-NucContentDisplay",
+                "id": "j4N3EAiK2tC1KfjZwIiX-",
+                "type": "LinearGCContentTrackDisplay",
+                "configuration": "gc_content_ATCC13032-LinearGCContentTrackDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
                 "color": "rgb(8, 152, 1)",
-                "constraints": {}
+                "constraints": {
+                  "max": 1,
+                  "min": 0
+                },
+                "windowSize": 200,
+                "windowDelta": 10
               }
             ]
           }
@@ -631,21 +613,27 @@
               }
             ]
           },
+
           {
             "id": "g4TgZV1fRooRZEvLp1I93",
-            "type": "NucContentTrack",
-            "configuration": "MB001_gc_content",
+            "type": "GCContentTrack",
+            "configuration": "gc_content_MB001",
             "minimized": false,
             "pinned": false,
             "displays": [
               {
-                "id": "VSKmf6tx3sEXfsouvG2Gh",
-                "type": "NucContentDisplay",
-                "configuration": "MB001_gc_content-NucContentDisplay",
+                "id": "j4N3EAiK2tC1KfjZwIiX-",
+                "type": "LinearGCContentTrackDisplay",
+                "configuration": "gc_content_MB001-LinearGCContentTrackDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
-                "posColor": "rgb(8, 152, 1)",
-                "constraints": {}
+                "color": "rgb(8, 152, 1)",
+                "constraints": {
+                  "max": 1,
+                  "min": 0
+                },
+                "windowSize": 200,
+                "windowDelta": 10
               }
             ]
           }
