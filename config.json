@@ -270,12 +270,17 @@
           "uri": "/path/to/fa.metadata.yaml"
         }
       },
-      "displays": [
-        {
-          "type": "LinearGCContentTrackDisplay",
-          "displayId": "gc_content_ATCC13032-LinearGCContentTrackDisplay"
-        }
-      ]
+            "displays": [
+              {
+                "id": "j4N3EAiK2tC1KfjZwIiX-",
+                "type": "LinearGCContentTrackDisplay",
+                "configuration": "gc_content_ATCC13032-LinearGCContentTrackDisplay",
+                "selectedRendering": "",
+                "resolution": 1,
+                "windowSize": 200,
+                "windowDelta": 20
+              }
+            ]
     },
     {
       "type": "FeatureTrack",
@@ -438,12 +443,17 @@
           "uri": "/path/to/fa.metadata.yaml"
         }
       },
-      "displays": [
-        {
-          "type": "LinearGCContentTrackDisplay",
-          "displayId": "gc_content_MB001-LinearGCContentTrackDisplay"
-        }
-      ]
+            "displays": [
+              {
+                "id": "j4N3EAiK2tC1KfjZwIiX-",
+                "type": "LinearGCContentTrackDisplay",
+                "configuration": "gc_content_MB001-LinearGCContentTrackDisplay",
+                "selectedRendering": "",
+                "resolution": 1,
+                "windowSize": 200,
+                "windowDelta": 20
+              }
+            ]
     }
   ],
   "internetAccounts": [],
@@ -475,7 +485,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.38)",
+    "name": "CoryneBrowse (v0.39)",
     "margin": 0,
     "views": [
       {
@@ -546,7 +556,7 @@
                   "min": 0
                 },
                 "windowSize": 200,
-                "windowDelta": 10
+                "windowDelta": 20
               }
             ]
           }
@@ -633,7 +643,7 @@
                   "min": 0
                 },
                 "windowSize": 200,
-                "windowDelta": 10
+                "windowDelta": 20
               }
             ]
           }
