@@ -19,7 +19,7 @@
           "main": "#A7C6DA"
         },
         "quaternary": {
-          "main": "#EDFF71"
+          "main": "#9EB25D"
         }
       }
     },
@@ -57,10 +57,6 @@
           "faiLocation": {
             "locationType": "UriLocation",
             "uri": "./data/ATCC13032/ATCC13032.fna.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
           }
         },
         "displays": [
@@ -89,10 +85,6 @@
           "faiLocation": {
             "locationType": "UriLocation",
             "uri": "./data/MB001/MB001.fna.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
           }
         },
         "displays": [
@@ -264,10 +256,6 @@
         "faiLocation": {
           "locationType": "UriLocation",
           "uri": "./data/ATCC13032/ATCC13032.fna.fai"
-        },
-        "metadataLocation": {
-          "locationType": "UriLocation",
-          "uri": "/path/to/fa.metadata.yaml"
         }
       },
             "displays": [
@@ -437,10 +425,6 @@
         "faiLocation": {
           "locationType": "UriLocation",
           "uri": "./data/MB001/MB001.fna.fai"
-        },
-        "metadataLocation": {
-          "locationType": "UriLocation",
-          "uri": "/path/to/fa.metadata.yaml"
         }
       },
             "displays": [
@@ -485,7 +469,7 @@
     },
     "minimized": false,
     "id": "-wdpwFdlBJATlr6BN5GI-",
-    "name": "CoryneBrowse (v0.42)",
+    "name": "CoryneBrowse (v0.43)",
     "margin": 0,
     "views": [
       {
@@ -494,7 +478,7 @@
         "minimized": true,
         "type": "LinearGenomeView",
         "offsetPx": 0,
-        "bpPerPx": 3.0413625304136254,
+        "bpPerPx": 2.31033020718,
         "displayedRegions": [
           {
             "reversed": false,
@@ -515,7 +499,7 @@
               {
                 "id": "MIFJdZOj8GkZuxKu_j2Xe",
                 "type": "LinearReferenceSequenceDisplay",
-                "heightPreConfig": 50,
+                "heightPreConfig": 100,
                 "configuration": "ATCC13032.fna-ReferenceSequenceTrack-LinearReferenceSequenceDisplay",
                 "showForward": true,
                 "showReverse": true,
@@ -533,6 +517,7 @@
               {
                 "id": "xvxxeMMqanaEiFtbGAGKf",
                 "type": "LinearBasicDisplay",
+                "heightPreConfig": 200,
                 "configuration": "ATCC13032_sorted.gff-LinearBasicDisplay"
               }
             ]
@@ -547,6 +532,7 @@
               {
                 "id": "j4N3EAiK2tC1KfjZwIiX-",
                 "type": "LinearGCContentTrackDisplay",
+                "heightPreConfig": 100,
                 "configuration": "gc_content_ATCC13032-LinearGCContentTrackDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
@@ -577,10 +563,11 @@
       },
       {
         "id": "55eVwhEHASZ6QcKJaPifP",
+        "displayName": "MB001",
         "minimized": false,
         "type": "LinearGenomeView",
         "offsetPx": 0,
-        "bpPerPx": 3.0413625304136254,
+        "bpPerPx": 2.31033020718,
         "displayedRegions": [
           {
             "reversed": false,
@@ -601,7 +588,7 @@
               {
                 "id": "SyMWNv7Spunr5A-Dg5YO7",
                 "type": "LinearReferenceSequenceDisplay",
-                "heightPreConfig": 50,
+                "heightPreConfig": 100,
                 "configuration": "MB001.fna-ReferenceSequenceTrack-LinearReferenceSequenceDisplay",
                 "showForward": true,
                 "showReverse": true,
@@ -619,6 +606,7 @@
               {
                 "id": "gBbaJ6DTS0kORNMvSE9Vl",
                 "type": "LinearBasicDisplay",
+                "heightPreConfig": 200,
                 "configuration": "MB001_sorted.gff-LinearBasicDisplay"
               }
             ]
